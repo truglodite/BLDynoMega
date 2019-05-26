@@ -27,6 +27,7 @@ Servo is used. You can also use the #error trick to verify which one is being co
 This project averages 0.6-0.8ms between analog samples, with a sample gate of 10ms, at 57k baud, and 100ms RPM gate time on a mega328 chip. The same settings for 2560 average 4ms per sample from a mix of 3 ADC's (built in, HX711, and ADS1115). The HX711's support 80 or 10 samples per second (13ms or 100ms per conversion). The MCU waits for serial flush (keeps all the data), but RPM samples are very coarse. So default timing parameters are good enough to match, and they play well with most serial radios/loggers. You can of course play with timing to suit your needs as you wish.
 
 ## Mega Pinout
+<<<<<<< HEAD
 Pin | Connect to...
 ---------|---------
 A0 | throttle potentiometer (0-5V)
@@ -66,3 +67,42 @@ D13 | status indicator (onboard LED)
 A0 | vbatt (10k:2.4k precision battery voltage divider... 25V max)
 A1 | current sensor (ACS7XX hall sensor)
 ADR - GND | Sets default i2c address of 0x48
+=======
+- *Pin         Connect to...*
+- A0          throttle potentiometer (0-5V)
+- D0          to serial RX (ex: Open Log, data radio, RealTerm...)
+- D1          to serial TX (for future UI purposes)
+- D2          Torque HX711 clock pin
+- D3          Force HX711 clock pin
+- D4          Torque HX711 data pin
+- D6          calibration button to ground, no resistors (internal pullups used)
+- D7          tare button...
+- D8          start switch...
+- D12         Force HX711 data pin (inamp to Mega A1 for coarse thrust... just one hx711)
+- D13         status indicator (onboard LED)
+- D14         brushless esc signal wire
+- D20         SDA - ADS1115 data pin
+- D21         SCL - ADS1115 clock pin
+- D47         RPM sensor (Eagle Tree or DIY), RPM = count*60/2/#poles
+
+## Nano Pinout
+- *Pin         Connect to...*
+- A4          SDA - ADS1115 data pin
+- A5          SCL - ADS1115 clock pin
+- D0          to serial RX (ex: Open Log, data radio, RealTerm...)
+- D1          to serial TX (for future UI purposes)
+- D2          Torque HX711 clock pin
+- D3          Force HX711 clock pin
+- D4          Torque HX711 data pin
+- D5          RPM sensor (Eagle Tree or DIY), RPM = count*60/2/#poles
+- D6          calibration button to ground, no resistors (internal pullups used)
+- D7          tare button...
+- D8          start switch...
+- D12         Force HX711 data pin
+- D13         status indicator (onboard LED)
+
+## ADS1115 Analog Inputs
+- A0          vbatt (10k:2.4k precision battery voltage divider... 25V max)
+- A1          current sensor (ACS7XX hall sensor)
+- ADR - GND   Sets default i2c address of 0x48
+>>>>>>> 2436e5f8dc4fd2deceb237a60795e2a9bedc17eb
