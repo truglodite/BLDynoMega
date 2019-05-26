@@ -1,6 +1,8 @@
 # Brushless Dyno Mega
 <img src="https://static.rcgroups.net/forums/attachments/1/4/2/0/9/0/a10074131-131-dynoData.jpg" width="600"><img src="https://static.rcgroups.net/forums/attachments/1/4/2/0/9/0/a10074102-31-20160917_151711.jpg" width="200">
 
+<img src="https://github.com/truglodite/BLDynoMega/blob/master/img/dynoData.jpg?raw=true" width="600"><img src="https://github.com/truglodite/BLDynoMega/blob/master/img/20160917_151711.jpg?raw=true" width="200">
+
 This code provides for a small BLDC motor dynamometer machine using an Arduino Uno or Mega. For Mega the pot controlled esc is enabled, for Uno etc it is disabled. The code outputs time, samples, (throttle), RPM, voltage, current, thrust, and torque through hardware serial. The output can be read, copied, and analyzed on a PC using your favorite serial terminal software (Arduino IDE, Putty, RealTerm, Atom, etc...), or stored on an SD card serial logger for later use. A sample period is set at compile time, which controls the time between printed lines of data, and the characteristics of the averaging filters.
 
 ## Sensors
