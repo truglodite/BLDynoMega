@@ -63,6 +63,8 @@ D12 | Force HX711 data pin
 D13 | status indicator (onboard LED)
 
 ## ADS1115 Analog Inputs
+Pin | Connect to
+--- | -----------
 A0 | vbatt (10k:2.4k precision battery voltage divider... 25V max)
 A1 | current sensor (ACS7XX hall sensor)
 ADR - GND | Sets default i2c address of 0x48
