@@ -22,6 +22,8 @@
 #endif
 
 //User defined parameters----------------------
+float nMagnets = 12.0;                         //number of magnets on the motor (2x poles)
+
 float forceCalLoad = 356.0;                    //physical force calibration load (gm)
 float torqueCalLoad = 904.0;                   //physical torque calibration load (gm*cm)
 
@@ -35,8 +37,6 @@ float currentSensor = 0.400;                   //Calibrated Vout/Ain for your se
 //ACS714          0.100       20A     AC
 //ACS7xx-20AU     0.200       20A     DC
 //ACS7xx-10AU     0.400       10A     DC
-
-float nMagnets = 12.0;                         //number of magnets on the motor (2x poles)
 
 unsigned int samplePeriod = 12; //delay between printed lines [milliseconds]
   //(10 default... 10 causing 'force spikes' during run, because sample time is 10ms max) *note loop times average 0.8ms
