@@ -45,7 +45,7 @@ D20 | SDA - ADS1115 data pin
 D21 | SCL - ADS1115 clock pin
 D47 | RPM sensor (Eagle Tree or DIY), RPM = count*60/2/#poles
 
-## Nano Pinout
+## Nano Pinout (Nano cannot do throttle control)
 Pin | Connect to
 ---- | ----------
 A4 | SDA - ADS1115 data pin
