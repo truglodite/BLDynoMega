@@ -13,7 +13,7 @@
 //////////////////////////////////////////////////////////////
 
 #include <EEPROM.h>
-#include <FreqCount.h>
+#include <FreqCount/FreqCount.h>
 #include <Q2HX711.h>
 #include <Wire.h>
 #include <Adafruit_ADS1015.h>
