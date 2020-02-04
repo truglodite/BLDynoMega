@@ -5,12 +5,15 @@ This code provides for a small BLDC motor dynamometer machine using an Arduino U
 
 ## Sensors
 - RPM
+
 Eagle tree, or similar DIY schmitt trigger type 5V RPM sensors are supported via the FreqCount library. RPM is not averaged, because FreqCount requires a relatively long gate time (>100ms) for decent accuracy with essentially all BLDC setups we are interested in. Unfortunately for now, motor magnet count must be compiled in firmware.
 
 - Torque & Thrust
+
 A pair of HX711 24bit strain gage ADC/PGA's are wired to 1kg load cells for torque and thrust. Calibration weights (gm) and torques (gm*cm) are hardcoded at compile time as well, however this is not of much inconvenience since most setups will only use one weight for calibration. The moment arm acting on the torque load cell must be taken into account when entering your #define torque calibration load.
 
 - Current & Voltage
+
 An ADS1115 i2c 16bit ADC is used to convert current and voltage signals. An ACS71X hall sensor is used for current, and battery voltage comes from a precision voltage divider (<30ppm/C). This leaves adc's 3 and 4 free for future expansion. Both current and battery calibration slopes are hardcoded as well. The comments in the code give values for some commonly sourced components.
 
 ## Tare & Calibration
@@ -20,7 +23,7 @@ Tare and calibration routines average 500 (default) samples before storing. Tare
 After taring Brushless Dyno Mega, hit the run button to start streaming data to serial. Hit run again to stop the data at any time.
 
 ## Throttle Control
-Version Mega adds esc control using a pot. The esc is controlled with a custom Servo library. The modification simply comments out timer 5 in ServoTimers.h for compatibility with FreqCount, which uses timers 2 and 5. To do this, you may copy the Servo folder from Arduino libraries (in C:\Arduino X.X.X\) to your custom library folder (in /documents/). Modify the copied library and at compile time, with verbose enabled, you should see a comment that the proper modified
+Version Mega adds esc control using a pot. The esc is controlled with a custom Servo library. The modification simply comments out timer 5 in ServoTimers.h for compatibility with FreqCount.h, which uses timers 2 and 5. To do this, you may copy the Servo folder from Arduino libraries (in C:\Arduino X.X.X\) to your custom library folder (in /documents/). Modify the copied library and at compile time, with verbose enabled, you should see a comment that the proper modified
 Servo is used. You can also use the #error trick to verify which one is being compiled... add #error anywhere in the ServoTimers.h you intend to use, and it should stop the compile with #error.
 
 ## Performance
